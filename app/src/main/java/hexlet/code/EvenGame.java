@@ -22,7 +22,8 @@ public class EvenGame {
             } else if (!isEven(number) && userAnswer.equals("no")) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + (isEven(number) ? "yes" : "no") + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + (isEven(number) ? "yes" : "no") + "'.");
                 System.out.println("Let's try again!");
                 return;
             }
