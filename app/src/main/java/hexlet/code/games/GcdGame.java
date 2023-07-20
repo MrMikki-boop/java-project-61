@@ -9,7 +9,8 @@ public class GcdGame {
     private static final int MAX_NUMBER = 100;
 
     public static void startGame() {
-        Engine.playGame("Find the greatest common divisor of given numbers.", MAX_QUESTIONS, GcdGame::generateQuestionAndAnswer);
+        Engine.playGame("Find the greatest common divisor of given numbers.", MAX_QUESTIONS,
+                GcdGame::generateQuestionAndAnswer);
     }
 
     private static String generateQuestionAndAnswer() {
