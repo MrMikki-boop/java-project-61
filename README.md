@@ -34,3 +34,9 @@ make run
 ```sh
 make lint
 ```
+
+### Update versions plugin
+
+```sh
+make last
+```
