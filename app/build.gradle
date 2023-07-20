@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+
+    id 'se.patrikerdes.use-latest-versions' version '0.2.18'
+    id 'com.github.ben-manes.versions' version '0.47.0'
+}
+
+group = 'hexlet.code'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+allprojects {
+    apply plugin: 'se.patrikerdes.use-latest-versions'
+    apply plugin: 'com.github.ben-manes.versions'
+}
+
+dependencies {
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+    testImplementation platform('org.junit:junit-bom:5.10.0-RC2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
