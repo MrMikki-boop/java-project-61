@@ -10,3 +10,9 @@ build: # Build app
 
 lint: # Check code style
 	./gradlew checkstyleMain
+
+test: # Test code
+	./gradlew test
+
+last: # Last version plugin
+	./gradlew useLatestVersions
