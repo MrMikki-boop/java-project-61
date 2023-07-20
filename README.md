@@ -17,26 +17,23 @@ Incorrect results end the game.
 ["Prime" - Definition of a prime number.](https://asciinema.org/a/598237) <br>
 
 ## Unix
-### Setup
 
+### Update versions plugin
+```sh
+make last
+```
+
+### Setup
 ```sh
 make build
 ```
 
 ### Start
-
 ```sh
 make run
 ```
 
 ### Linter
-
 ```sh
 make lint
-```
-
-### Update versions plugin
-
-```sh
-make last
 ```
