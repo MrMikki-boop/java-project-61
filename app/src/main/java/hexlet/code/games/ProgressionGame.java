@@ -18,7 +18,8 @@ public class ProgressionGame {
 
     private static String generateQuestionAndAnswer() {
         Random random = new Random();
-        int progressionLength = random.nextInt(PROGRESSION_LENGTH_MAX - PROGRESSION_LENGTH_MIN + 1) + PROGRESSION_LENGTH_MIN;
+        int progressionLength = random.nextInt(PROGRESSION_LENGTH_MAX - PROGRESSION_LENGTH_MIN + 1)
+                + PROGRESSION_LENGTH_MIN;
         int progressionStep = random.nextInt(PROGRESSION_MAX_STEP - PROGRESSION_MIN_STEP + 1) + PROGRESSION_MIN_STEP;
         int hiddenIndex = random.nextInt(progressionLength);
 
@@ -28,7 +29,7 @@ public class ProgressionGame {
         return question + "\n" + answer;
     }
 
-    private static int[] generateProgression(int length, int step) {
+    public static int[] generateProgression(int length, int step) {
         int[] progression = new int[length];
         for (int i = 0; i < length; i++) {
             progression[i] = i * step;
@@ -36,7 +37,7 @@ public class ProgressionGame {
         return progression;
     }
 
-    private static String formatProgression(int[] progression, int hiddenIndex) {
+    public static String formatProgression(int[] progression, int hiddenIndex) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < progression.length; i++) {
             if (i == hiddenIndex) {

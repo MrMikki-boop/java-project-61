@@ -13,7 +13,7 @@ public class CalcGame {
         Engine.playGame("What is the result of the expression?", MAX_QUESTIONS, CalcGame::generateQuestionAndAnswer);
     }
 
-    private static String generateQuestionAndAnswer() {
+    public static String generateQuestionAndAnswer() {
         Random random = new Random();
         int number1 = random.nextInt(MAX_NUMBER) + 1;
         int number2 = random.nextInt(MAX_NUMBER) + 1;

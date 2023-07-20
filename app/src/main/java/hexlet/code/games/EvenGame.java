@@ -39,7 +39,7 @@ public class EvenGame {
         return random.nextInt(100) + 1;
     }
 
-    private static boolean isEven(int number) {
+    public static boolean isEven(int number) {
         return number % 2 == 0;
     }
 }

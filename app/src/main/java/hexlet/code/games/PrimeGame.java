@@ -22,7 +22,7 @@ public class PrimeGame {
         return question + "\n" + answer;
     }
 
-    private static boolean isPrime(int number) {
+    public static boolean isPrime(int number) {
         if (number < 2) {
             return false;
         }

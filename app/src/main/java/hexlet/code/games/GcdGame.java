@@ -23,7 +23,7 @@ public class GcdGame {
         return question + "\n" + answer;
     }
 
-    private static int calculateGcd(int number1, int number2) {
+    public static int calculateGcd(int number1, int number2) {
         while (number2 != 0) {
             int temp = number1 % number2;
             number1 = number2;
