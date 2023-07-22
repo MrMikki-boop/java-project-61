@@ -18,11 +18,11 @@ application {
     mainClassName = 'hexlet.code.App'
 }
 
-/*
+
 compileJava {
     options.release = 20
 }
-*/
+
 run {
     standardInput = System.in
 }
