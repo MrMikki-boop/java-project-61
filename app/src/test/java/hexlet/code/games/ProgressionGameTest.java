@@ -7,12 +7,12 @@ public class ProgressionGameTest {
 
     private static final int PROGRESSION_LENGTH = 5;
     private static final int PROGRESSION_STEP = 2;
+    private static final int[] EXPECTED_PROGRESSION = {0, 2, 4, 6, 8};
 
     @Test
     public void testGenerateProgression() {
         int[] progression = ProgressionGame.generateProgression(PROGRESSION_LENGTH, PROGRESSION_STEP);
-        int[] expectedProgression = {0, 2, 4, 6, 8};
-        Assertions.assertArrayEquals(expectedProgression, progression, "The generated progression is incorrect.");
+        Assertions.assertArrayEquals(EXPECTED_PROGRESSION, progression, "The generated progression is incorrect.");
     }
 
     @Test
