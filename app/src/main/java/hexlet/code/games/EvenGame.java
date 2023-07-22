@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class EvenGame {
     private static final int MAX_QUESTIONS = 3;
+    private static final int MAX_NUMBER = 100;
 
     public static void startGame() {
         String name = Cli.greetUser();
@@ -35,7 +36,7 @@ public class EvenGame {
 
     private static int generateRandomNumber() {
         Random random = new Random();
-        return random.nextInt(100) + 1;
+        return random.nextInt(MAX_NUMBER) + 1;
     }
 
     private static String getUserInput() {
