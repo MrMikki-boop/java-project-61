@@ -9,6 +9,13 @@ import hexlet.code.games.PrimeGame;
 import java.util.Scanner;
 
 public class App {
+    private static final int CHOICE_FOR_GREET = 1;
+    private static final int CHOICE_FOR_EVEN = 2;
+    private static final int CHOICE_FOR_CALC = 3;
+    private static final int CHOICE_FOR_GCD = 4;
+    private static final int CHOICE_FOR_PROG = 5;
+    private static final int CHOICE_FOR_PRIME = 6;
+    private static final int CHOICE_FOR_EXIT = 0;
     public static void main(String[] args) {
         showMenu();
     }
@@ -27,26 +34,32 @@ public class App {
         int choice = scanner.nextInt();
 
         switch (choice) {
-            case 1:
+            case CHOICE_FOR_GREET:
                 // Запуск игры Greet
                 Cli.greetUser();
                 break;
-            case 2:
+            case CHOICE_FOR_EVEN:
+                // Запуск игры Even
                 EvenGame.startGame();
                 break;
-            case 3:
+            case CHOICE_FOR_CALC:
+                // Запуск игры CalcGame
                 CalcGame.startGame();
                 break;
-            case 4:
+            case CHOICE_FOR_GCD:
+                // Запуск игры GcdGame
                 GcdGame.startGame();
                 break;
-            case 5:
+            case CHOICE_FOR_PROG:
+                // Запуск игры Progression
                 ProgressionGame.startGame();
                 break;
-            case 6:
+            case CHOICE_FOR_PRIME:
+                // Запуск игры Prime
                 PrimeGame.startGame();
                 break;
-            case 0:
+            case CHOICE_FOR_EXIT:
+                // Выход из игры
                 System.out.println("Goodbye!");
                 break;
             default:
