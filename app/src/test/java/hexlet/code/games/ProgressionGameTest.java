@@ -4,8 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class ProgressionGameTest {
+
     private static final int PROGRESSION_LENGTH = 5;
     private static final int PROGRESSION_STEP = 2;
+
     @Test
     public void testGenerateProgression() {
         int[] progression = ProgressionGame.generateProgression(PROGRESSION_LENGTH, PROGRESSION_STEP);

@@ -7,21 +7,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PrimeGameTest {
 
+    private static final int[] PRIME_NUMBERS = {2, 3, 5, 7, 17, 19, 97};
+    private static final int[] NON_PRIME_NUMBERS = {4, 6, 8, 10, 15, 100};
+
     @Test
     void testIsPrime() {
-        assertTrue(PrimeGame.isPrime(2));
-        assertTrue(PrimeGame.isPrime(3));
-        assertTrue(PrimeGame.isPrime(5));
-        assertTrue(PrimeGame.isPrime(7));
-        assertTrue(PrimeGame.isPrime(17));
-        assertTrue(PrimeGame.isPrime(19));
-        assertTrue(PrimeGame.isPrime(97));
+        for (int prime : PRIME_NUMBERS) {
+            assertTrue(PrimeGame.isPrime(prime));
+        }
 
-        assertFalse(PrimeGame.isPrime(4));
-        assertFalse(PrimeGame.isPrime(6));
-        assertFalse(PrimeGame.isPrime(8));
-        assertFalse(PrimeGame.isPrime(10));
-        assertFalse(PrimeGame.isPrime(15));
-        assertFalse(PrimeGame.isPrime(100));
+        for (int nonPrime : NON_PRIME_NUMBERS) {
+            assertFalse(PrimeGame.isPrime(nonPrime));
+        }
     }
 }
