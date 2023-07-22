@@ -8,6 +8,7 @@ public class ProgressionGameTest {
     private static final int PROGRESSION_LENGTH = 5;
     private static final int PROGRESSION_STEP = 2;
     private static final int[] EXPECTED_PROGRESSION = {0, 2, 4, 6, 8};
+    private static final int[] TEST_PROGRESSION = {1, 3, 5, 7, 9};
 
     @Test
     public void testGenerateProgression() {
@@ -17,8 +18,7 @@ public class ProgressionGameTest {
 
     @Test
     public void testFormatProgression() {
-        int[] progression = {1, 3, 5, 7, 9};
-        String formatted = ProgressionGame.formatProgression(progression, PROGRESSION_STEP);
+        String formatted = ProgressionGame.formatProgression(TEST_PROGRESSION, PROGRESSION_STEP);
         String expectedFormatted = "1 3 .. 7 9";
         Assertions.assertEquals(expectedFormatted, formatted, "The formatted progression is incorrect.");
     }
