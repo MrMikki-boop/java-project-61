@@ -21,7 +21,7 @@ public class Engine {
             System.out.print("Your answer: ");
             String userAnswer = scanner.next();
 
-            if (userAnswer.equals(correctAnswer)) {
+            if (userAnswer.equalsIgnoreCase(correctAnswer)) {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
