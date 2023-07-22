@@ -10,23 +10,22 @@ public class EvenGame {
 
     public static void startGame() {
         String name = Cli.greetUser();
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (int i = 0; i < MAX_QUESTIONS; i++) {
             int number = generateRandomNumber();
             System.out.println("Question: " + number);
             System.out.print("Your answer: ");
-            String userAnswer = scanner.next();
+            String userAnswer = getUserInput();
 
-            if (isEven(number) && userAnswer.equals("yes")) {
+            if (isEven(number) && userAnswer.equalsIgnoreCase("yes")) {
                 System.out.println("Correct!");
-            } else if (!isEven(number) && userAnswer.equals("no")) {
+            } else if (!isEven(number) && userAnswer.equalsIgnoreCase("no")) {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
                         + (isEven(number) ? "yes" : "no") + "'.");
-                System.out.println("Let's try again!");
+                System.out.println("Let's try again, " + name + "!");
                 return;
             }
         }
@@ -37,6 +36,11 @@ public class EvenGame {
     private static int generateRandomNumber() {
         Random random = new Random();
         return random.nextInt(100) + 1;
+    }
+
+    private static String getUserInput() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.next();
     }
 
     public static boolean isEven(int number) {
