@@ -14,7 +14,8 @@ public class CalcGameTest {
         String question = parts[0];
         String answer = parts[1];
 
-        Assertions.assertTrue(question.matches("\\d+ [-+*] \\d+"), "The question should be in the format 'number operator number'.");
+        Assertions.assertTrue(question.matches("\\d+ [-+*] \\d+"),
+                "The question should be in the format 'number operator number'.");
         Assertions.assertTrue(answer.matches("-?\\d+"), "The answer should be a valid integer.");
 
         char operator = question.charAt(question.indexOf(' ') + 1);
@@ -37,6 +38,7 @@ public class CalcGameTest {
         }
 
         int actual = Integer.parseInt(answer);
-        Assertions.assertEquals(expected, actual, "The generated answer should be correct based on the generated question.");
+        Assertions.assertEquals(expected, actual,
+                "The generated answer should be correct based on the generated question.");
     }
 }
