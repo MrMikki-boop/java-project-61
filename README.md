@@ -30,7 +30,7 @@ make build
 
 ### Start
 ```sh
-make run
+make run-dist
 ```
 
 ### Linter
