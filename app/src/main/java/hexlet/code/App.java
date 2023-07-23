@@ -13,7 +13,7 @@ public class App {
     private static final int CHOICE_FOR_EVEN = 2;
     private static final int CHOICE_FOR_CALC = 3;
     private static final int CHOICE_FOR_GCD = 4;
-    private static final int CHOICE_FOR_PROG = 5;
+    private static final int CHOICE_FOR_PROGRESSION = 5;
     private static final int CHOICE_FOR_PRIME = 6;
     private static final int CHOICE_FOR_EXIT = 0;
     public static void main(String[] args) {
@@ -50,7 +50,7 @@ public class App {
                 // Запуск игры GcdGame
                 GcdGame.startGame();
                 break;
-            case CHOICE_FOR_PROG:
+            case CHOICE_FOR_PROGRESSION:
                 // Запуск игры Progression
                 ProgressionGame.startGame();
                 break;
