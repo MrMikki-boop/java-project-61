@@ -8,34 +8,43 @@ public class CalcGame {
     private static final int MAX_QUESTIONS = 3;
     private static final int MAX_NUMBER = 20;
     private static final char[] OPERATIONS = {'+', '-', '*'};
+    private static final String QUESTION_CALC = "What is the result of the expression? \n";
 
     public static void startGame() {
-        Engine.playGame("What is the result of the expression?", MAX_QUESTIONS, CalcGame::generateQuestionAndAnswer);
+        String[][] rounds = generateRounds();
+        Engine.playGame(rounds);
     }
 
-    public static String generateQuestionAndAnswer() {
-        Random random = new Random();
-        int number1 = random.nextInt(MAX_NUMBER) + 1;
-        int number2 = random.nextInt(MAX_NUMBER) + 1;
-        char operation = OPERATIONS[random.nextInt(OPERATIONS.length)];
+    private static String[][] generateRounds() {
+        String[][] rounds = new String[MAX_QUESTIONS][2];
 
-        int result;
-        switch (operation) {
-            case '+':
-                result = number1 + number2;
-                break;
-            case '-':
-                result = number1 - number2;
-                break;
-            case '*':
-                result = number1 * number2;
-                break;
-            default:
-                throw new IllegalStateException("Invalid operation: " + operation);
+        for (int i = 0; i < MAX_QUESTIONS; i++) {
+            Random random = new Random();
+            int number1 = random.nextInt(MAX_NUMBER) + 1;
+            int number2 = random.nextInt(MAX_NUMBER) + 1;
+            char operation = OPERATIONS[random.nextInt(OPERATIONS.length)];
+
+            int result;
+            switch (operation) {
+                case '+':
+                    result = number1 + number2;
+                    break;
+                case '-':
+                    result = number1 - number2;
+                    break;
+                case '*':
+                    result = number1 * number2;
+                    break;
+                default:
+                    throw new IllegalStateException("Invalid operation: " + operation);
+            }
+
+            String question = number1 + " " + operation + " " + number2;
+            String answer = String.valueOf(result);
+
+            rounds[i][0] = QUESTION_CALC + question;
+            rounds[i][1] = answer;
         }
-
-        String question = number1 + " " + operation + " " + number2;
-        String answer = String.valueOf(result);
-        return question + "\n" + answer;
+        return rounds;
     }
 }

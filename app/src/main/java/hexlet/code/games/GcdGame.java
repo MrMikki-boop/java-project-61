@@ -7,27 +7,40 @@ import java.util.Random;
 public class GcdGame {
     private static final int MAX_QUESTIONS = 3;
     private static final int MAX_NUMBER = 100;
+    private static final String QUESTION_PRIME = "Find the greatest common divisor of given numbers. \n";
 
     public static void startGame() {
-        Engine.playGame("Find the greatest common divisor of given numbers.", MAX_QUESTIONS,
-                GcdGame::generateQuestionAndAnswer);
+        String[][] rounds = generateRounds();
+        Engine.playGame(rounds);
     }
 
-    private static String generateQuestionAndAnswer() {
-        Random random = new Random();
-        int number1 = random.nextInt(MAX_NUMBER) + 1;
-        int number2 = random.nextInt(MAX_NUMBER) + 1;
+    private static String[][] generateRounds() {
+        String[][] rounds = new String[MAX_QUESTIONS][2];
 
-        String question = number1 + " " + number2;
-        String answer = String.valueOf(calculateGcd(number1, number2));
-        return question + "\n" + answer;
+        for (int i = 0; i < MAX_QUESTIONS; i++) {
+            int number1 = generateRandomNumber();
+            int number2 = generateRandomNumber();
+
+            String question = number1 + " " + number2;
+            String correctAnswer = Integer.toString(calculateGcd(number1, number2));
+
+            rounds[i][0] = QUESTION_PRIME + question;
+            rounds[i][1] = correctAnswer;
+        }
+
+        return rounds;
+    }
+
+    private static int generateRandomNumber() {
+        Random random = new Random();
+        return random.nextInt(MAX_NUMBER) + 1;
     }
 
     public static int calculateGcd(int number1, int number2) {
         while (number2 != 0) {
-            int temp = number1 % number2;
-            number1 = number2;
-            number2 = temp;
+            int temp = number2;
+            number2 = number1 % number2;
+            number1 = temp;
         }
         return Math.abs(number1);
     }

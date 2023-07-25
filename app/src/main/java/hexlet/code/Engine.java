@@ -1,21 +1,15 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import java.util.function.Supplier;
 
 public class Engine {
-
-    public static void playGame(String question, int maxQuestions, Supplier<String> questionAndAnswerSupplier) {
+    public static void playGame(String[][] rounds) {
         String name = Cli.greetUser();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println(question);
-
-        for (int i = 0; i < maxQuestions; i++) {
-            String questionAndAnswer = questionAndAnswerSupplier.get();
-            String[] parts = questionAndAnswer.split("\n");
-            String questionText = parts[0];
-            String correctAnswer = parts[1];
+        for (String[] round : rounds) {
+            String questionText = round[0];
+            String correctAnswer = round[1];
 
             System.out.println("Question: " + questionText);
             System.out.print("Your answer: ");
