@@ -18,10 +18,6 @@ public class App {
     private static final int CHOICE_FOR_EXIT = 0;
 
     public static void main(String[] args) {
-        showMenu();
-    }
-
-    public static void showMenu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -65,7 +61,7 @@ public class App {
                 break;
             default:
                 System.out.println("Invalid choice. Please try again.");
-                showMenu();
+                main(args);
                 break;
         }
     }
