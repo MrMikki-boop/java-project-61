@@ -15,7 +15,7 @@ public class CalcGame {
         Engine.playGame(rounds, QUESTION_CALC);
     }
 
-    private static String[][] generateRounds() {
+    public static String[][] generateRounds() {
         String[][] rounds = new String[MAX_QUESTIONS][2];
 
         for (int i = 0; i < MAX_QUESTIONS; i++) {
@@ -33,11 +33,11 @@ public class CalcGame {
         return rounds;
     }
 
-    private static String generateQuestion(int number1, int number2, char operation) {
+    public static String generateQuestion(int number1, int number2, char operation) {
         return number1 + " " + operation + " " + number2;
     }
 
-    private static int calculateExpression(int number1, int number2, char operation) {
+    public static int calculateExpression(int number1, int number2, char operation) {
         switch (operation) {
             case '+':
                 return number1 + number2;
