@@ -16,6 +16,7 @@ public class App {
     private static final int CHOICE_FOR_PROGRESSION = 5;
     private static final int CHOICE_FOR_PRIME = 6;
     private static final int CHOICE_FOR_EXIT = 0;
+
     public static void main(String[] args) {
         showMenu();
     }
