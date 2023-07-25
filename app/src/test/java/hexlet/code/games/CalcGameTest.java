@@ -6,39 +6,39 @@ import org.junit.jupiter.api.Test;
 public class CalcGameTest {
 
     @Test
-    public void testGenerateQuestionAndAnswer() {
-        String qa = CalcGame.generateQuestionAndAnswer();
-        String[] parts = qa.split("\n");
-        Assertions.assertEquals(2, parts.length, "The question and answer should be separated by a new line.");
+    public void testGenerateQuestion() {
+        String question = CalcGame.generateQuestion(2, 3, '+');
+        Assertions.assertEquals("2 + 3", question);
+    }
 
-        String question = parts[0];
-        String answer = parts[1];
+    @Test
+    public void testCalculateExpression() {
+        int result1 = CalcGame.calculateExpression(2, 3, '+');
+        Assertions.assertEquals(5, result1);
 
-        Assertions.assertTrue(question.matches("\\d+ [-+*] \\d+"),
-                "The question should be in the format 'number operator number'.");
-        Assertions.assertTrue(answer.matches("-?\\d+"), "The answer should be a valid integer.");
+        int result2 = CalcGame.calculateExpression(5, 2, '-');
+        Assertions.assertEquals(3, result2);
 
-        char operator = question.charAt(question.indexOf(' ') + 1);
-        int number1 = Integer.parseInt(question.substring(0, question.indexOf(' ')));
-        int number2 = Integer.parseInt(question.substring(question.lastIndexOf(' ') + 1));
+        int result3 = CalcGame.calculateExpression(4, 5, '*');
+        Assertions.assertEquals(20, result3);
 
-        int expected;
-        switch (operator) {
-            case '+':
-                expected = number1 + number2;
-                break;
-            case '-':
-                expected = number1 - number2;
-                break;
-            case '*':
-                expected = number1 * number2;
-                break;
-            default:
-                throw new IllegalStateException("Invalid operation: " + operator);
+        Assertions.assertThrows(IllegalStateException.class, () -> CalcGame.calculateExpression(2, 3, '/'));
+    }
+
+    @Test
+    public void testGenerateRounds() {
+        String[][] rounds = CalcGame.generateRounds();
+        Assertions.assertNotNull(rounds);
+        Assertions.assertEquals(3, rounds.length);
+
+        for (String[] round : rounds) {
+            String question = round[0];
+            Assertions.assertTrue(question.matches("\\d+ [+\\-*] \\d+"), "Invalid question format: " + question);
         }
 
-        int actual = Integer.parseInt(answer);
-        Assertions.assertEquals(expected, actual,
-                "The generated answer should be correct based on the generated question.");
+        for (String[] round : rounds) {
+            String answer = round[1];
+            Assertions.assertDoesNotThrow(() -> Integer.parseInt(answer), "Answer is not a number: " + answer);
+        }
     }
 }
