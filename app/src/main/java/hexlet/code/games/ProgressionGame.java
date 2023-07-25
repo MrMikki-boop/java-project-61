@@ -48,14 +48,15 @@ public class ProgressionGame {
     }
 
     public static String formatProgression(int[] progression, int hiddenIndex) {
-        StringBuilder sb = new StringBuilder();
+        int hiddenValue = progression[hiddenIndex];
+        progression[hiddenIndex] = -1; // Temporarily replace the hidden element with -1
+
+        String[] numbers = new String[progression.length];
         for (int i = 0; i < progression.length; i++) {
-            if (i == hiddenIndex) {
-                sb.append(".. ");
-            } else {
-                sb.append(progression[i]).append(" ");
-            }
+            numbers[i] = progression[i] == -1 ? ".." : String.valueOf(progression[i]);
         }
-        return sb.toString().trim();
+
+        progression[hiddenIndex] = hiddenValue; // Restore the hidden element
+        return String.join(" ", numbers);
     }
 }
