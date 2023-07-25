@@ -7,7 +7,7 @@ import java.util.Random;
 public class PrimeGame {
     private static final int MAX_QUESTIONS = 3;
     private static final int MAX_NUMBER = 100;
-    private static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'. \n";
+    private static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void startGame() {
         String[][] rounds = generateRounds();

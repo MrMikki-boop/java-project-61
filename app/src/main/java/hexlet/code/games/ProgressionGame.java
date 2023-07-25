@@ -10,7 +10,7 @@ public class ProgressionGame {
     private static final int PROGRESSION_LENGTH_MAX = 10;
     private static final int PROGRESSION_MIN_STEP = 1;
     private static final int PROGRESSION_MAX_STEP = 10;
-    private static final String QUESTION = "What number is missing in the progression? \n";
+    private static final String QUESTION = "What number is missing in the progression?";
 
     public static void startGame() {
         String[][] rounds = generateRounds();
