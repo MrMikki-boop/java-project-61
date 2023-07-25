@@ -8,11 +8,11 @@ public class CalcGame {
     private static final int MAX_QUESTIONS = 3;
     private static final int MAX_NUMBER = 20;
     private static final char[] OPERATIONS = {'+', '-', '*'};
-    private static final String QUESTION_CALC = "What is the result of the expression? \n";
+    private static final String QUESTION = "What is the result of the expression? \n";
 
     public static void startGame() {
         String[][] rounds = generateRounds();
-        Engine.playGame(rounds, QUESTION_CALC);
+        Engine.playGame(rounds, QUESTION);
     }
 
     public static String[][] generateRounds() {
