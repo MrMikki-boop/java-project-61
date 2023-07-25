@@ -28,14 +28,15 @@ public class CalcGameTest {
         int result3 = CalcGame.calculateExpression(NUMBER_4, NUMBER_3, '*');
         Assertions.assertEquals(NUMBER_5, result3);
 
-        Assertions.assertThrows(IllegalStateException.class, () -> CalcGame.calculateExpression(NUMBER_1, NUMBER_2, '/'));
+        Assertions.assertThrows(IllegalStateException.class, ()
+                -> CalcGame.calculateExpression(NUMBER_1, NUMBER_2, '/'));
     }
 
     @Test
     public void testGenerateRounds() {
         String[][] rounds = CalcGame.generateRounds();
         Assertions.assertNotNull(rounds);
-        Assertions.assertEquals(3, rounds.length);
+        Assertions.assertEquals(NUMBER_2, rounds.length);
 
         for (String[] round : rounds) {
             String question = round[0];
