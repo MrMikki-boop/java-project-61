@@ -6,7 +6,7 @@ public class Engine {
     public static void playGame(String[][] rounds, String question) {
         String name = Cli.greetUser();
         Scanner scanner = new Scanner(System.in);
-        System.out.print(question);
+        System.out.println(question);
 
         for (String[] round : rounds) {
             String questionText = round[0];
