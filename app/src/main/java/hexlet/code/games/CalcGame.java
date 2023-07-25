@@ -24,27 +24,29 @@ public class CalcGame {
             int number2 = random.nextInt(MAX_NUMBER) + 1;
             char operation = OPERATIONS[random.nextInt(OPERATIONS.length)];
 
-            int result;
-            switch (operation) {
-                case '+':
-                    result = number1 + number2;
-                    break;
-                case '-':
-                    result = number1 - number2;
-                    break;
-                case '*':
-                    result = number1 * number2;
-                    break;
-                default:
-                    throw new IllegalStateException("Invalid operation: " + operation);
-            }
-
-            String question = number1 + " " + operation + " " + number2;
-            String answer = String.valueOf(result);
+            String question = generateQuestion(number1, number2, operation);
+            String answer = String.valueOf(calculateExpression(number1, number2, operation));
 
             rounds[i][0] = QUESTION_CALC + question;
             rounds[i][1] = answer;
         }
         return rounds;
+    }
+
+    private static String generateQuestion(int number1, int number2, char operation) {
+        return number1 + " " + operation + " " + number2;
+    }
+
+    private static int calculateExpression(int number1, int number2, char operation) {
+        switch (operation) {
+            case '+':
+                return number1 + number2;
+            case '-':
+                return number1 - number2;
+            case '*':
+                return number1 * number2;
+            default:
+                throw new IllegalStateException("Invalid operation: " + operation);
+        }
     }
 }
