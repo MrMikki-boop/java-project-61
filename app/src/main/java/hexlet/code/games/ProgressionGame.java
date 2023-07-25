@@ -9,7 +9,7 @@ public class ProgressionGame {
     private static final int PROGRESSION_LENGTH_MIN = 5;
     private static final int PROGRESSION_LENGTH_MAX = 10;
     private static final int PROGRESSION_MIN_STEP = 1;
-    private static final int PROGRESSION_MAX_STEP = 10;
+    private static final int PROGRESSION_MAX_STEP = 20;
     private static final String QUESTION = "What number is missing in the progression?";
 
     public static void startGame() {
@@ -48,15 +48,12 @@ public class ProgressionGame {
     }
 
     public static String formatProgression(int[] progression, int hiddenIndex) {
-        int hiddenValue = progression[hiddenIndex];
-        progression[hiddenIndex] = -1; // Temporarily replace the hidden element with -1
-
         String[] numbers = new String[progression.length];
+
         for (int i = 0; i < progression.length; i++) {
-            numbers[i] = progression[i] == -1 ? ".." : String.valueOf(progression[i]);
+            numbers[i] = (i == hiddenIndex) ? ".." : String.valueOf(progression[i]);
         }
 
-        progression[hiddenIndex] = hiddenValue; // Restore the hidden element
         return String.join(" ", numbers);
     }
 }
