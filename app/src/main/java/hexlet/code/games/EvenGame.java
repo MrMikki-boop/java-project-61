@@ -7,11 +7,11 @@ import java.util.Random;
 public class EvenGame {
     private static final int MAX_QUESTIONS = 3;
     private static final int MAX_NUMBER = 100;
-    private static final String QUESTION_EVEN = "Answer 'yes' if the number is even, otherwise answer 'no'. ";
+    private static final String QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'. ";
 
     public static void startGame() {
         String[][] rounds = generateRounds();
-        Engine.playGame(rounds);
+        Engine.playGame(rounds, QUESTION);
     }
 
     private static String[][] generateRounds() {
@@ -22,7 +22,7 @@ public class EvenGame {
             String question = Integer.toString(number);
             String correctAnswer = isEven(number) ? "yes" : "no";
 
-            rounds[i][0] = QUESTION_EVEN + question;
+            rounds[i][0] = question;
             rounds[i][1] = correctAnswer;
         }
 

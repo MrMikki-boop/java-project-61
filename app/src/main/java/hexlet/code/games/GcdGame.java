@@ -7,11 +7,11 @@ import java.util.Random;
 public class GcdGame {
     private static final int MAX_QUESTIONS = 3;
     private static final int MAX_NUMBER = 100;
-    private static final String QUESTION_PRIME = "Find the greatest common divisor of given numbers. \n";
+    private static final String QUESTION = "Find the greatest common divisor of given numbers. \n";
 
     public static void startGame() {
         String[][] rounds = generateRounds();
-        Engine.playGame(rounds);
+        Engine.playGame(rounds, QUESTION);
     }
 
     private static String[][] generateRounds() {
@@ -24,7 +24,7 @@ public class GcdGame {
             String question = number1 + " " + number2;
             String correctAnswer = Integer.toString(calculateGcd(number1, number2));
 
-            rounds[i][0] = QUESTION_PRIME + question;
+            rounds[i][0] = question;
             rounds[i][1] = correctAnswer;
         }
 

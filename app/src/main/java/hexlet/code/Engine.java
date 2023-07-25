@@ -3,9 +3,10 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static void playGame(String[][] rounds) {
+    public static void playGame(String[][] rounds, String question) {
         String name = Cli.greetUser();
         Scanner scanner = new Scanner(System.in);
+        System.out.print(question);
 
         for (String[] round : rounds) {
             String questionText = round[0];

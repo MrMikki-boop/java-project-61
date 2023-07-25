@@ -12,7 +12,7 @@ public class CalcGame {
 
     public static void startGame() {
         String[][] rounds = generateRounds();
-        Engine.playGame(rounds);
+        Engine.playGame(rounds, QUESTION_CALC);
     }
 
     private static String[][] generateRounds() {
@@ -27,7 +27,7 @@ public class CalcGame {
             String question = generateQuestion(number1, number2, operation);
             String answer = String.valueOf(calculateExpression(number1, number2, operation));
 
-            rounds[i][0] = QUESTION_CALC + question;
+            rounds[i][0] = question;
             rounds[i][1] = answer;
         }
         return rounds;

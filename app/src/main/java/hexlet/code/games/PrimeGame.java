@@ -7,11 +7,11 @@ import java.util.Random;
 public class PrimeGame {
     private static final int MAX_QUESTIONS = 3;
     private static final int MAX_NUMBER = 100;
-    private static final String QUESTION_PRIME = "Answer 'yes' if given number is prime. Otherwise answer 'no'. \n";
+    private static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'. \n";
 
     public static void startGame() {
         String[][] rounds = generateRounds();
-        Engine.playGame(rounds);
+        Engine.playGame(rounds, QUESTION);
     }
 
     private static String[][] generateRounds() {
@@ -22,7 +22,7 @@ public class PrimeGame {
             String question = Integer.toString(number);
             String correctAnswer = isPrime(number) ? "yes" : "no";
 
-            rounds[i][0] = QUESTION_PRIME + question;
+            rounds[i][0] = question;
             rounds[i][1] = correctAnswer;
         }
 
