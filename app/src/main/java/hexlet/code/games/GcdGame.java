@@ -6,7 +6,6 @@ import java.util.Random;
 
 public class GcdGame {
     private static final int MAX_QUESTIONS = 3;
-    private static final int MAX_NUMBER = 100;
     private static final String QUESTION = "Find the greatest common divisor of given numbers.";
 
     public static void startGame() {
@@ -33,7 +32,7 @@ public class GcdGame {
 
     private static int generateRandomNumber() {
         Random random = new Random();
-        return random.nextInt(MAX_NUMBER) + 1;
+        return random.nextInt(Engine.MAX_NUMBER) + 1;
     }
 
     public static int calculateGcd(int number1, int number2) {
