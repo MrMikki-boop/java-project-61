@@ -19,7 +19,7 @@ public class EvenGame {
 
         for (int i = 0; i < maxQuestions; i++) {
             int number = generateRandomNumber();
-            String question = Integer.toString(number);
+            String question = "Question: " + number;
             String correctAnswer = isEven(number) ? "yes" : "no";
 
             rounds[i][0] = question;
