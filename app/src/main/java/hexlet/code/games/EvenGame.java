@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class EvenGame {
-
+    private static final int MAX_QUESTIONS = 3;
     private static final String QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void startGame() {
@@ -14,10 +14,9 @@ public class EvenGame {
     }
 
     private static String[][] generateRounds() {
-        int maxQuestions = 3;
-        String[][] rounds = new String[maxQuestions][2];
+        String[][] rounds = new String[MAX_QUESTIONS][2];
 
-        for (int i = 0; i < maxQuestions; i++) {
+        for (int i = 0; i < MAX_QUESTIONS; i++) {
             int number = generateRandomNumber();
             String question = "Question: " + number;
             String correctAnswer = isEven(number) ? "yes" : "no";
