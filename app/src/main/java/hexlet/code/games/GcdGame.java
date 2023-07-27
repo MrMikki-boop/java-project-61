@@ -20,7 +20,7 @@ public class GcdGame {
             int number1 = generateRandomNumber();
             int number2 = generateRandomNumber();
 
-            String question = number1 + " " + number2;
+            String question = "Question: " + number1 + " " + number2;
             String correctAnswer = Integer.toString(calculateGcd(number1, number2));
 
             rounds[i][0] = question;

@@ -33,7 +33,7 @@ public class CalcGame {
     }
 
     public static String generateQuestion(int number1, int number2, char operation) {
-        return number1 + " " + operation + " " + number2;
+        return "Question: " + number1 + " " + operation + " " + number2;
     }
 
     public static int calculateExpression(int number1, int number2, char operation) {

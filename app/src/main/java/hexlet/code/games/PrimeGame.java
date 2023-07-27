@@ -18,7 +18,7 @@ public class PrimeGame {
 
         for (int i = 0; i < MAX_QUESTIONS; i++) {
             int number = generateRandomNumber();
-            String question = Integer.toString(number);
+            String question = "Question: " + number; // Add the "Question: " prefix
             String correctAnswer = isPrime(number) ? "yes" : "no";
 
             rounds[i][0] = question;

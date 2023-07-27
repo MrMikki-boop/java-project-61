@@ -29,7 +29,7 @@ public class ProgressionGame {
             int hiddenIndex = random.nextInt(progressionLength);
 
             int[] progression = generateProgression(progressionLength, progressionStep);
-            String question = formatProgression(progression, hiddenIndex);
+            String question = "Question: " + formatProgression(progression, hiddenIndex);
             String answer = String.valueOf(progression[hiddenIndex]);
 
             rounds[i][0] = question;
