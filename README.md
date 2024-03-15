@@ -3,10 +3,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/3cc1b86e97bf8784502c/maintainability)](https://codeclimate.com/github/MrMikki-boop/java-project-61/maintainability) <br>
 ## app
 
-Mind Games is a set of five console games.
-Each game asks questions that need to be answered.
-After three correct answers, the game is considered to be completed.
-Incorrect results end the game.
+Mind Games is a collection of five console games. In each game, a series of questions must be answered correctly to
+complete the game. If three correct answers are given, the game ends. Incorrect answers end the game immediately.
 
 ## Games demonstration:  <br>
 ["Greet" - User greeting.](https://asciinema.org/a/598239) <br>
