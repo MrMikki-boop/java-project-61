@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/MrMikki-boop/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/MrMikki-boop/java-project-61/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3cc1b86e97bf8784502c/maintainability)](https://codeclimate.com/github/MrMikki-boop/java-project-61/maintainability) <br>
-## app
+## Mind Games
 
 Mind Games is a collection of five console games. In each game, a series of questions must be answered correctly to
 complete the game. If three correct answers are given, the game ends. Incorrect answers end the game immediately.
